@@ -2,11 +2,12 @@ package me.yoursole.Numerical.Real;
 
 
 import lombok.Getter;
-import me.yoursole.Numerical.Complex.AbstractComplex;
+
+import me.yoursole.Numerical.Complex.ComplexImpl;
 
 
 @Getter
-public class Rational extends AbstractComplex {
+public class Rational extends ComplexImpl {
     int numerator;
     int denominator;
 
@@ -23,8 +24,5 @@ public class Rational extends AbstractComplex {
 
         //todo implement
     }
-
-
-
 
 }
