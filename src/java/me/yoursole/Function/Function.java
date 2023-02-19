@@ -6,6 +6,8 @@ import me.yoursole.Numerical.Numerical;
 /**
  * A (1* -> 1) mathematical function
  */
+
+@FunctionalInterface
 public interface Function extends MathObject {
 
     /**
