@@ -18,7 +18,13 @@ public class Rational extends AbstractComplex {
         this.denominator = denominator;
     }
 
-    public Rational add(double value){
-        return null;
+    public Rational(double value){
+        super(new double[]{value});
+
+        //todo implement
     }
+
+
+
+
 }
