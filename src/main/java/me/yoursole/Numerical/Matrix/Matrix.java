@@ -3,6 +3,8 @@ package me.yoursole.Numerical.Matrix;
 import lombok.Getter;
 import me.yoursole.Numerical.Numerical;
 
+import java.util.Arrays;
+
 
 public record Matrix(@Getter Numerical[][] values) implements Numerical {
 
@@ -38,5 +40,10 @@ public record Matrix(@Getter Numerical[][] values) implements Numerical {
         }
 
         return sum;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.deepToString(this.values);
     }
 }
