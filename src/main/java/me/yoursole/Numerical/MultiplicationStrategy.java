@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import me.yoursole.Common.NumericalTransformer;
 import me.yoursole.Numerical.Matrix.Matrix;
-import me.yoursole.Numerical.Matrix.NumericalBase;
+import me.yoursole.Numerical.Complex.NumericalBase;
 
 
 @AllArgsConstructor
@@ -56,7 +56,16 @@ public enum MultiplicationStrategy {
     BASE_BASE(new NumericalTransformer<NumericalBase, NumericalBase>() {
         @Override
         public Numerical operate(NumericalBase baseA, NumericalBase baseB) {
-            return new NumericalBase(baseA.getValue() * baseB.getValue());
+            double a = baseA.getReal();
+            double b = baseA.getImaginary();
+
+            double x = baseB.getReal();
+            double y = baseB.getImaginary();
+
+            double newReal = (a*x - b*y);
+            double newIm = (a*y + b*x);
+
+            return new NumericalBase(newReal, newIm);
         }
 
         @Override

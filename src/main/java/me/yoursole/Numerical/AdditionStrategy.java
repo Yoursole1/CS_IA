@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import me.yoursole.Common.NumericalTransformer;
 import me.yoursole.Numerical.Matrix.Matrix;
-import me.yoursole.Numerical.Matrix.NumericalBase;
+import me.yoursole.Numerical.Complex.NumericalBase;
 
 import java.util.Arrays;
 
@@ -57,7 +57,7 @@ public enum AdditionStrategy {
     BASE_BASE(new NumericalTransformer<NumericalBase, NumericalBase>() {
         @Override
         public Numerical operate(NumericalBase baseA, NumericalBase baseB) {
-            return new NumericalBase(baseA.getValue() + baseB.getValue());
+            return new NumericalBase(baseA.getReal() + baseB.getReal(), baseA.getImaginary() + baseB.getImaginary());
         }
 
         @Override
