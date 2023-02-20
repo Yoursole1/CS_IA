@@ -1,6 +1,7 @@
 package me.yoursole.Numerical.Matrix;
 
 import lombok.Getter;
+import me.yoursole.Numerical.AdditionStrategy;
 import me.yoursole.Numerical.Numerical;
 
 
@@ -17,7 +18,8 @@ public record NumericalBase(@Getter double value) implements Numerical {
 
     @Override
     public Numerical add(Numerical other) {
-        return null;
+        AdditionStrategy strategy = AdditionStrategy.fetch(this, other);
+        return strategy.getOperation().operate(this, other);
     }
 
     @Override
