@@ -6,8 +6,14 @@ import me.yoursole.Numerical.Numerical;
 import java.util.Arrays;
 
 
-public record Matrix(@Getter Numerical[][] values) implements Numerical {
+public class Matrix implements Numerical {
 
+    @Getter
+    private final Numerical[][] values;
+
+    public Matrix(Numerical[][] values){
+        this.values = values;
+    }
 
     public int[] getDimension() {
         return new int[]{this.values.length, this.values[0].length};

@@ -32,13 +32,13 @@ public record NumericalBase(@Getter double real, @Getter double imaginary) imple
      * @return
      */
     public Matrix getMatrixForm(){
-        double theta = arg();
+        double theta = this.arg();
 
         Matrix rotation = new Matrix(new Numerical[][]{
                 {new NumericalBase(Math.cos(theta), 0), new NumericalBase(-Math.sin(theta), 0)},
                 {new NumericalBase(Math.sin(theta), 0), new NumericalBase(Math.cos(theta), 0)}
         });
-        rotation = (Matrix) rotation.multiply(new NumericalBase(modulo(), 0));
+        rotation = (Matrix) rotation.multiply(new NumericalBase(this.modulo(), 0));
         return rotation;
     }
 
