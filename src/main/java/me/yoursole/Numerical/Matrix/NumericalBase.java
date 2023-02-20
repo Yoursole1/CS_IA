@@ -2,6 +2,7 @@ package me.yoursole.Numerical.Matrix;
 
 import lombok.Getter;
 import me.yoursole.Numerical.AdditionStrategy;
+import me.yoursole.Numerical.MultiplicationStrategy;
 import me.yoursole.Numerical.Numerical;
 
 
@@ -24,19 +25,7 @@ public record NumericalBase(@Getter double value) implements Numerical {
 
     @Override
     public Numerical multiply(Numerical other) {
-        return null;
-    }
-
-    @Override
-    public int[] getDimension() {
-        return new int[]{1, 1};
-    }
-
-    @Override
-    public Numerical[] getGroup(int location, boolean v) {
-        if (location == 0) {
-            return new Numerical[]{this};
-        }
-        throw new IndexOutOfBoundsException(location + " out of bounds for length 1");
+        MultiplicationStrategy strategy = MultiplicationStrategy.fetch(this, other);
+        return strategy.getOperation().operate(this, other);
     }
 }

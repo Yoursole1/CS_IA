@@ -40,7 +40,7 @@ public enum AdditionStrategy {
     MATRIX_BASE(new NumericalTransformer<Matrix, NumericalBase>() {
         @Override
         public Numerical operate(Matrix matrix, NumericalBase base) {
-            return BASE_MATRIX.getOperation().operate(base, matrix);
+            return AdditionStrategy.BASE_MATRIX.getOperation().operate(base, matrix);
         }
 
         @Override

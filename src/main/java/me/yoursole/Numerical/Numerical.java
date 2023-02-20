@@ -10,8 +10,4 @@ public interface Numerical extends MathObject {
     Numerical add(Numerical other);
 
     Numerical multiply(Numerical other);
-
-    int[] getDimension();
-
-    Numerical[] getGroup(int location, boolean v);
 }
