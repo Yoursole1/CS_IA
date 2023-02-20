@@ -6,6 +6,8 @@ import me.yoursole.Common.NumericalTransformer;
 import me.yoursole.Numerical.Matrix.Matrix;
 import me.yoursole.Numerical.Matrix.NumericalBase;
 
+import java.util.Arrays;
+
 
 @AllArgsConstructor
 public enum AdditionStrategy {
@@ -66,6 +68,36 @@ public enum AdditionStrategy {
         @Override
         public Class<?> getB() {
             return NumericalBase.class;
+        }
+    }),
+
+    MATRIX_MATRIX(new NumericalTransformer<Matrix, Matrix>() {
+        @Override
+        public Numerical operate(Matrix baseA, Matrix baseB) {
+            if(!Arrays.equals(baseA.getDimension(), baseB.getDimension())){
+                throw new IllegalArgumentException("Addition of two matrices with different dimensions");
+            }
+
+            int[] dimension = baseA.getDimension();
+            Numerical[][] newMatrix = new Numerical[dimension[0]][dimension[1]];
+
+            for (int i = 0; i < dimension[0]; i++) {
+                for (int j = 0; j < dimension[1]; j++) {
+                    newMatrix[i][j] = baseA.getValues()[i][j].add(baseB.getValues()[i][j]);
+                }
+            }
+
+            return new Matrix(newMatrix);
+        }
+
+        @Override
+        public Class<?> getA() {
+            return Matrix.class;
+        }
+
+        @Override
+        public Class<?> getB() {
+            return Matrix.class;
         }
     })
 ;

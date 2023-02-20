@@ -13,7 +13,7 @@ public enum MultiplicationStrategy {
     BASE_MATRIX(new NumericalTransformer<NumericalBase, Matrix>() {
         @Override
         public Numerical operate(NumericalBase base, Matrix matrix) {
-
+            return null;
         }
 
         @Override
@@ -30,7 +30,7 @@ public enum MultiplicationStrategy {
     MATRIX_BASE(new NumericalTransformer<Matrix, NumericalBase>() {
         @Override
         public Numerical operate(Matrix matrix, NumericalBase base) {
-
+            return null;
         }
 
         @Override
@@ -47,7 +47,7 @@ public enum MultiplicationStrategy {
     BASE_BASE(new NumericalTransformer<NumericalBase, NumericalBase>() {
         @Override
         public Numerical operate(NumericalBase baseA, NumericalBase baseB) {
-
+            return null;
         }
 
         @Override
@@ -58,6 +58,23 @@ public enum MultiplicationStrategy {
         @Override
         public Class<?> getB() {
             return NumericalBase.class;
+        }
+    }),
+
+    MATRIX_MATRIX(new NumericalTransformer<Matrix, Matrix>() {
+        @Override
+        public Numerical operate(Matrix baseA, Matrix baseB) {
+            return null;
+        }
+
+        @Override
+        public Class<?> getA() {
+            return Matrix.class;
+        }
+
+        @Override
+        public Class<?> getB() {
+            return Matrix.class;
         }
     })
     ;

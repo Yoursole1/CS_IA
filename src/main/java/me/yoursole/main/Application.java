@@ -15,7 +15,10 @@ public class Application {
                 {new NumericalBase(4), new NumericalBase(5)}
         });
 
-        NumericalBase a = new NumericalBase(1);
+        Matrix a = new Matrix(new Numerical[][]{
+                {new NumericalBase(1), new NumericalBase(3)},
+                {new NumericalBase(4), new NumericalBase(5)},
+        });
 
         System.out.println(Arrays.deepToString(((Matrix) m.add(a)).getValues()));
     }
