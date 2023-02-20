@@ -27,22 +27,14 @@ public record Matrix(@Getter Numerical[][] values) implements Numerical {
 
 
     public Numerical[] getGroup(int location, boolean v) {
-        Numerical[] group = new Numerical[v ? this.getDimension()[0] : this.getDimension()[1]];
+        int dim1 = this.getDimension()[0];
+        int dim2 = this.getDimension()[1];
+        Numerical[] group = new Numerical[v ? dim1 : dim2];
 
-        for (int i = 0; i < this.values.length; i++) {
-            for (int j = 0; j < this.values[i].length; j++) {
-                if (v) {
-                    if (j != location) {
-                        continue;
-                    }
-                    group[i] = this.values[i][j];
-                } else {
-                    if (i != location) {
-                        continue;
-                    }
-                    group[j] = this.values[i][j];
-                }
-            }
+        for (int i = 0; i < group.length; i++) {
+            int row = v ? i : location;
+            int col = v ? location : i;
+            group[i] = this.values[row][col];
         }
 
         return group;
