@@ -20,6 +20,6 @@ public class Application {
                 {new NumericalBase(4), new NumericalBase(5)},
         });
 
-        System.out.println(Arrays.deepToString(((Matrix) m.multiply(a)).getValues()));
+        System.out.println(Arrays.deepToString(((Matrix) m.add(a)).getValues()));
     }
 }

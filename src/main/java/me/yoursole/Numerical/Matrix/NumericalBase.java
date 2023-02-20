@@ -1,8 +1,6 @@
 package me.yoursole.Numerical.Matrix;
 
 import lombok.Getter;
-import me.yoursole.Numerical.AdditionStrategy;
-import me.yoursole.Numerical.MultiplicationStrategy;
 import me.yoursole.Numerical.Numerical;
 
 
@@ -15,17 +13,4 @@ import me.yoursole.Numerical.Numerical;
  * getDimension (even though this always returns [1,1])
  */
 
-public record NumericalBase(@Getter double value) implements Numerical {
-
-    @Override
-    public Numerical add(Numerical other) {
-        AdditionStrategy strategy = AdditionStrategy.fetch(this, other);
-        return strategy.getOperation().operate(this, other);
-    }
-
-    @Override
-    public Numerical multiply(Numerical other) {
-        MultiplicationStrategy strategy = MultiplicationStrategy.fetch(this, other);
-        return strategy.getOperation().operate(this, other);
-    }
-}
+public record NumericalBase(@Getter double value) implements Numerical{}
