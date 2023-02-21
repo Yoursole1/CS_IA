@@ -8,7 +8,7 @@ import me.yoursole.Numerical.Numerical;
 /**
  * Since matrices can contain other matrices, this is the
  * "base case" in that recursion.  NumericalBase acts as a
- * double but from the perspective of the algorithms operating
+ * complex number but from the perspective of the algorithms operating
  * on the matrix it is within this is simply another term within
  * the nested matrix
  */
@@ -26,10 +26,16 @@ public record NumericalBase(@Getter double real, @Getter double imaginary) imple
     public double modulo(){
         return Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2));
     }
+
+
     /**
      * Generates a rotation matrix with the same rotational properties as
      * the complex number when multiplied by a 2D vector
-     * @return
+     *
+     * This works using the fact that complex number rotate by adding arguments when multiplied, and they
+     * scale the modulus through multiplication.  This means that the behavior of
+     * any complex number when multiplied can be represented as a 2x2 matrix.
+     * @return rotation matrix
      */
     public Matrix getMatrixForm(){
         double theta = this.arg();
