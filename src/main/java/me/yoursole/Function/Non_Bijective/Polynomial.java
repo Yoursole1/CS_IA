@@ -1,11 +1,9 @@
-package me.yoursole.Function.Bijective;
+package me.yoursole.Function.Non_Bijective;
 
 import me.yoursole.Numerical.Complex.NumericalBase;
 import me.yoursole.Numerical.Numerical;
 
-import java.util.Arrays;
-
-public class Polynomial implements Bijective{
+public class Polynomial implements NonBijective {
 
     /**
      * Coefficients of polynomial in descending order
@@ -15,11 +13,6 @@ public class Polynomial implements Bijective{
 
     public Polynomial(Numerical[] coefficients){
         this.coefficients = coefficients;
-    }
-
-    @Override
-    public Bijective inverse() {
-        return null;
     }
 
     /**
@@ -38,9 +31,15 @@ public class Polynomial implements Bijective{
         for (int i = 0; i < this.coefficients.length; i++) {
             Numerical freeTerm = x[i].pow(this.coefficients.length - i - 1);
             Numerical coefficient = this.coefficients[i];
-
+            Numerical term = coefficient.multiply(freeTerm); //since we are potentially dealing with matrices the order matters here
+            output.add(term);
         }
 
         return output;
+    }
+
+    @Override
+    public NonBijective pseudoInverse() {
+        return null;
     }
 }
