@@ -1,8 +1,8 @@
-package me.yoursole.Numerical;
+package me.yoursole.numerical;
 
 
 import me.yoursole.MathObject;
-import me.yoursole.Numerical.Complex.NumericalBase;
+import me.yoursole.numerical.complex.NumericalBase;
 
 /**
  * Any mathematical object that does not have free variables

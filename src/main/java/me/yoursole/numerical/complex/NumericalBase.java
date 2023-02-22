@@ -1,8 +1,8 @@
-package me.yoursole.Numerical.Complex;
+package me.yoursole.numerical.complex;
 
 import lombok.Getter;
-import me.yoursole.Numerical.Matrix.Matrix;
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.matrix.Matrix;
+import me.yoursole.numerical.Numerical;
 
 
 /**

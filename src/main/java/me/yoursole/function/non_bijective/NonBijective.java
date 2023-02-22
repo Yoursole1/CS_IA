@@ -1,6 +1,6 @@
-package me.yoursole.Function.Non_Bijective;
+package me.yoursole.function.non_bijective;
 
-import me.yoursole.Function.Function;
+import me.yoursole.function.Function;
 
 public interface NonBijective extends Function {
     /**

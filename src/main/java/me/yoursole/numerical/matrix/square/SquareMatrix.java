@@ -1,7 +1,7 @@
-package me.yoursole.Numerical.Matrix.Square;
+package me.yoursole.numerical.matrix.square;
 
-import me.yoursole.Numerical.Matrix.Matrix;
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.matrix.Matrix;
+import me.yoursole.numerical.Numerical;
 
 public class SquareMatrix extends Matrix {
 

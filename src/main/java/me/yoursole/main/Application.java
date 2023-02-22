@@ -1,8 +1,8 @@
 package me.yoursole.main;
 
-import me.yoursole.Numerical.Complex.NumericalBase;
-import me.yoursole.Numerical.Matrix.Matrix;
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.complex.NumericalBase;
+import me.yoursole.numerical.matrix.Matrix;
+import me.yoursole.numerical.Numerical;
 
 public class Application {
 

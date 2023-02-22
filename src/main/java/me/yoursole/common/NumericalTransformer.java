@@ -1,6 +1,6 @@
-package me.yoursole.Common;
+package me.yoursole.common;
 
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.Numerical;
 
 
 /**
@@ -16,6 +16,6 @@ public interface NumericalTransformer<A extends Numerical, B extends Numerical> 
      */
     Numerical operate(A a, B b);
 
-    Class<?> getA();
-    Class<?> getB();
+    Class<?> getTypeA();
+    Class<?> getTypeB();
 }

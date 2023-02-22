@@ -1,7 +1,7 @@
-package me.yoursole.Function.Non_Bijective;
+package me.yoursole.function.non_bijective;
 
-import me.yoursole.Numerical.Complex.NumericalBase;
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.complex.NumericalBase;
+import me.yoursole.numerical.Numerical;
 
 public class Polynomial implements NonBijective {
 

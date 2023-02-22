@@ -1,7 +1,7 @@
-package me.yoursole.Function;
+package me.yoursole.function;
 
 import me.yoursole.MathObject;
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.Numerical;
 
 /**
  * A (1* -> 1) mathematical function

@@ -1,7 +1,7 @@
-package me.yoursole.Numerical.Matrix;
+package me.yoursole.numerical.matrix;
 
 import lombok.Getter;
-import me.yoursole.Numerical.Numerical;
+import me.yoursole.numerical.Numerical;
 
 import java.util.Arrays;
 

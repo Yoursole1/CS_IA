@@ -1,10 +1,10 @@
-package me.yoursole.Numerical;
+package me.yoursole.numerical;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import me.yoursole.Common.NumericalTransformer;
-import me.yoursole.Numerical.Matrix.Matrix;
-import me.yoursole.Numerical.Complex.NumericalBase;
+import me.yoursole.common.NumericalTransformer;
+import me.yoursole.numerical.matrix.Matrix;
+import me.yoursole.numerical.complex.NumericalBase;
 
 
 @AllArgsConstructor
@@ -26,12 +26,12 @@ public enum MultiplicationStrategy {
         }
 
         @Override
-        public Class<?> getA() {
+        public Class<?> getTypeA() {
             return NumericalBase.class;
         }
 
         @Override
-        public Class<?> getB() {
+        public Class<?> getTypeB() {
             return Matrix.class;
         }
     }),
@@ -43,12 +43,12 @@ public enum MultiplicationStrategy {
         }
 
         @Override
-        public Class<?> getA() {
+        public Class<?> getTypeA() {
             return Matrix.class;
         }
 
         @Override
-        public Class<?> getB() {
+        public Class<?> getTypeB() {
             return NumericalBase.class;
         }
     }),
@@ -69,12 +69,12 @@ public enum MultiplicationStrategy {
         }
 
         @Override
-        public Class<?> getA() {
+        public Class<?> getTypeA() {
             return NumericalBase.class;
         }
 
         @Override
-        public Class<?> getB() {
+        public Class<?> getTypeB() {
             return NumericalBase.class;
         }
     }),
@@ -102,12 +102,12 @@ public enum MultiplicationStrategy {
         }
 
         @Override
-        public Class<?> getA() {
+        public Class<?> getTypeA() {
             return Matrix.class;
         }
 
         @Override
-        public Class<?> getB() {
+        public Class<?> getTypeB() {
             return Matrix.class;
         }
     })
@@ -123,7 +123,7 @@ public enum MultiplicationStrategy {
 
         for (MultiplicationStrategy strategy : MultiplicationStrategy.values()) {
             NumericalTransformer<? extends Numerical, ? extends Numerical> operation = strategy.getOperation();
-            if(leftType == operation.getA() && rightType == operation.getB()){
+            if(leftType == operation.getTypeA() && rightType == operation.getTypeB()){
                 return strategy;
             }
         }
