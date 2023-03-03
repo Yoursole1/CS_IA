@@ -74,7 +74,7 @@ public enum AdditionStrategy {
     MATRIX_MATRIX(new NumericalTransformer<Matrix, Matrix>() {
         @Override
         public Numerical operate(Matrix baseA, Matrix baseB) {
-            if(!Arrays.equals(baseA.getDimension(), baseB.getDimension())){
+            if(!Arrays.equals(baseA.getDimension(), baseB.getDimension())) {
                 throw new IllegalArgumentException("Addition of two matrices with different dimensions");
             }
 

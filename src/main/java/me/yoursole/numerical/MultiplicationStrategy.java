@@ -38,7 +38,7 @@ public enum MultiplicationStrategy {
 
     MATRIX_BASE(new NumericalTransformer<Matrix, NumericalBase>() {
         @Override
-        public Numerical operate(Matrix matrix, NumericalBase base) {
+        public Numerical operate(Matrix matrix, NumericalBase base) { //Multiplication is symmetric for Matrix to NumericalBase
             return MultiplicationStrategy.BASE_MATRIX.getOperation().operate(base, matrix);
         }
 
@@ -53,7 +53,7 @@ public enum MultiplicationStrategy {
         }
     }),
 
-    BASE_BASE(new NumericalTransformer<NumericalBase, NumericalBase>() {
+    BASE_BASE(new NumericalTransformer<NumericalBase, NumericalBase>() { // implementation for complex number multiplication
         @Override
         public Numerical operate(NumericalBase baseA, NumericalBase baseB) {
             double a = baseA.getReal();

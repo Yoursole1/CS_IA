@@ -29,7 +29,7 @@ public class Polynomial implements NonBijective {
         Numerical output = new NumericalBase(0, 0);
 
         for (int i = 0; i < this.coefficients.length; i++) {
-            Numerical freeTerm = x[i].pow(this.coefficients.length - i - 1);
+            Numerical freeTerm = x[0].pow(this.coefficients.length - i - 1);
             Numerical coefficient = this.coefficients[i];
             Numerical term = coefficient.multiply(freeTerm); //since we are potentially dealing with matrices the order matters here
             output.add(term);

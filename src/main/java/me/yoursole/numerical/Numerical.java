@@ -30,7 +30,7 @@ public interface Numerical extends MathObject {
         Numerical base = this.add(new NumericalBase(0, 0)); //essentially a clone
 
         for (int i = 1; i < power; i++) { //starts at 1 because power 1 should not multiply
-            base.multiply(base);
+            base = base.multiply(base);
         }
 
         return base;
