@@ -15,6 +15,10 @@ import me.yoursole.numerical.Numerical;
 
 public record NumericalBase(@Getter double real, @Getter double imaginary) implements Numerical{
 
+    public NumericalBase(double real){
+        this(real, 0);
+    }
+
     public NumericalBase complexConjugate(){
         return new NumericalBase(this.real, -this.imaginary);
     }
